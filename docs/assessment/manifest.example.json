@@ -1,0 +1,36 @@
+{
+  "seed": 20261004,
+  "sample_fraction": 0.25,
+  "sample_size_cap": 200000,
+  "min_sample_size": 2000,
+  "max_combo_order": 3,
+  "bootstraps": 1000,
+  "confidence": 0.95,
+  "attacker": {
+    "name": "external-acquirer",
+    "available_combos": [
+      "birth_year+region",
+      "birth_year+region+occupation"
+    ],
+    "pop_fraction": 0.02
+  },
+  "thresholds": {
+    "max_high": 0.05,
+    "max_medium": 0.01,
+    "mean_high": 0.02,
+    "mean_medium": 0.005,
+    "unique_high": 0.02,
+    "unique_medium": 0.005,
+    "k_anonymity_floor": 5,
+    "l_diversity_floor": 2
+  },
+  "datasets": [
+    {
+      "identifier": "example-customers",
+      "path": "data/example-customers.csv",
+      "quasi_identifiers": ["birth_year", "region", "occupation"],
+      "sensitive": ["plan_tier"],
+      "note": "示例清单：路径与列名替换为真实发布表后即可运行。"
+    }
+  ]
+}
